@@ -1,3 +1,62 @@
 [gd_scene format=3 uid="uid://b27fxwx8q4l0p"]
 
-[node name="Node2D" type="Node2D" unique_id=1248015741]
+[ext_resource type="Script" uid="uid://cr6urn2b328ig" path="res://Scripts/timer_scene.gd" id="1_c7xwe"]
+[ext_resource type="Texture2D" uid="uid://d0t0s0huheiut" path="res://sprites/gradient.png" id="1_rol8n"]
+[ext_resource type="Texture2D" uid="uid://c1v2bp25pjhl" path="res://sprites/garlic.png" id="2_cn3xy"]
+
+[node name="TimerScreen" type="Node2D" unique_id=1248015741]
+script = ExtResource("1_c7xwe")
+
+[node name="Background" type="TextureRect" parent="." unique_id=47764756]
+offset_right = 1151.0
+offset_bottom = 1151.0
+texture = ExtResource("1_rol8n")
+
+[node name="GarlicContainer" type="HBoxContainer" parent="." unique_id=1101152439]
+offset_left = 323.0
+offset_top = 124.0
+offset_right = 839.0
+offset_bottom = 307.0
+
+[node name="Garlic" type="TextureRect" parent="GarlicContainer" unique_id=830077768]
+layout_mode = 2
+texture = ExtResource("2_cn3xy")
+stretch_mode = 6
+
+[node name="Garlic2" type="TextureRect" parent="GarlicContainer" unique_id=146692116]
+layout_mode = 2
+texture = ExtResource("2_cn3xy")
+stretch_mode = 6
+
+[node name="Garlic3" type="TextureRect" parent="GarlicContainer" unique_id=727332752]
+layout_mode = 2
+texture = ExtResource("2_cn3xy")
+stretch_mode = 6
+
+[node name="Garlic4" type="TextureRect" parent="GarlicContainer" unique_id=1599047010]
+layout_mode = 2
+texture = ExtResource("2_cn3xy")
+stretch_mode = 6
+
+[node name="Garlic5" type="TextureRect" parent="GarlicContainer" unique_id=1820704817]
+layout_mode = 2
+texture = ExtResource("2_cn3xy")
+stretch_mode = 6
+
+[node name="Level" type="RichTextLabel" parent="." unique_id=272222656]
+offset_left = 465.0
+offset_top = 330.0
+offset_right = 679.0
+offset_bottom = 379.0
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 50
+text = " Level #"
+
+[node name="Timer" type="RichTextLabel" parent="." unique_id=1059434169]
+offset_left = 525.0
+offset_top = 426.0
+offset_right = 623.0
+offset_bottom = 473.0
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 50
+text = " 0.0"
