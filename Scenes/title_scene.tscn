@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://c7mbn8gtxolj"]
+
+[ext_resource type="Texture2D" uid="uid://d0t0s0huheiut" path="res://sprites/gradient.png" id="1_68ljo"]
+[ext_resource type="Script" uid="uid://bb62cbm5tobud" path="res://Scripts/title_scene.gd" id="1_b6ftn"]
+
+[node name="TitleScreen" type="Node2D" unique_id=2114788113]
+script = ExtResource("1_b6ftn")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1616531368]
+offset_right = 1151.0
+offset_bottom = 1151.0
+texture = ExtResource("1_68ljo")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect" unique_id=941199341]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 90.0
+offset_right = 1153.0
+offset_bottom = 1241.0
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/normal_font_size = 108
+bbcode_enabled = true
+text = "[center]PixelWare[/center]"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=880494088]
+offset_left = 438.0
+offset_top = 271.0
+offset_right = 710.0
+offset_bottom = 571.0
+theme_override_constants/separation = 17
+
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=2076977427]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
+text = "Start Game"
+
+[node name="Settings" type="Button" parent="VBoxContainer" unique_id=1750987464]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
+text = "Settings"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=2027541455]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
