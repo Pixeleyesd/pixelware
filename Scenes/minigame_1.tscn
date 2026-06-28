@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://brla4idxox3xn"]
+
+[ext_resource type="Texture2D" uid="uid://cx4ppwule0v23" path="res://sprites/background.webp" id="1_enoba"]
+[ext_resource type="PackedScene" uid="uid://dkst8k6nk1alm" path="res://Scenes/Player.tscn" id="2_11mgy"]
+[ext_resource type="Script" uid="uid://dv7uqtyxhefcp" path="res://Scripts/Whitewash.gd" id="2_f6tb2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3qmyp"]
+size = Vector2(40, 70)
+
+[node name="Minigame_1" type="Node2D" unique_id=1563486763]
+
+[node name="ScrollingBackground" type="Parallax2D" parent="." unique_id=1237231363]
+repeat_size = Vector2(1241.075, 0)
+
+[node name="Background" type="TextureRect" parent="ScrollingBackground" unique_id=1129870099]
+offset_left = -56.0
+offset_top = -9.0
+offset_right = 1185.1791
+offset_bottom = 652.0
+texture = ExtResource("1_enoba")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1381641433]
+offset_left = -4.0
+offset_top = -7.0
+offset_right = 1172.0
+offset_bottom = 676.0
+script = ExtResource("2_f6tb2")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=984469393]
+
+[node name="Platform" type="ColorRect" parent="StaticBody2D" unique_id=923535018]
+offset_left = -4.0
+offset_top = 656.00006
+offset_right = 36.0
+offset_bottom = 696.00006
+scale = Vector2(28.973549, -1.8399987)
+color = Color(0.11372549, 0.3372549, 0.6117647, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1955612129]
+position = Vector2(575.0001, 617)
+scale = Vector2(28.973549, 1)
+shape = SubResource("RectangleShape2D_3qmyp")
+
+[node name="Player" parent="." unique_id=1043414835 instance=ExtResource("2_11mgy")]
+position = Vector2(148, 242)

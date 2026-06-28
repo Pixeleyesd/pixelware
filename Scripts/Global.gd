@@ -1,3 +1,5 @@
+#this is hackclub's code
+
 extends Node
 
 var minigames_done = 0 #track how many minigames done
