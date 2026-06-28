@@ -14,13 +14,13 @@ sprite_frames = ExtResource("2_kyqiw")
 animation = &"run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=122623580]
-position = Vector2(-9, 11)
-scale = Vector2(1, 1.0465608)
+position = Vector2(-1, 11)
+scale = Vector2(0.95999855, 1.0465608)
 shape = SubResource("RectangleShape2D_6fnu3")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2110285935]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=1791901147]
-position = Vector2(-9, 11)
-scale = Vector2(1, 1.0465608)
+position = Vector2(-1, 11)
+scale = Vector2(0.95999855, 1.0465608)
 shape = SubResource("RectangleShape2D_6fnu3")

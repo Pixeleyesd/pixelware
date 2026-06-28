@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var animated_sprite = $AnimatedSprite2D
 
 const SPEED = 400.0
-const JUMP_VELOCITY = -475.0
+const JUMP_VELOCITY = -525.0
 
 func _process(delta):
 	if Input.is_action_pressed("ui_right"):

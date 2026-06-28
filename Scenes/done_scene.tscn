@@ -1,0 +1,153 @@
+[gd_scene format=3 uid="uid://oyxp57cy5q5b"]
+
+[ext_resource type="Script" uid="uid://d1fwjhcewkenj" path="res://Scripts/done_scene.gd" id="1_pcoa8"]
+[ext_resource type="Texture2D" uid="uid://d0t0s0huheiut" path="res://sprites/gradient.png" id="2_8kkf3"]
+
+[sub_resource type="Animation" id="Animation_pcoa8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_8kkf3"]
+resource_name = "new_animation"
+length = 9.133333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 1.3069549, 2.3748326, 3.5248795, 5.4350195),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.102, 0.102, 0.432, 0.432, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yj15t"]
+_data = {
+&"RESET": SubResource("Animation_pcoa8"),
+&"new_animation": SubResource("Animation_8kkf3")
+}
+
+[sub_resource type="Animation" id="Animation_3u2hx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(438, 687)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_7ajtn"]
+resource_name = "new_animation"
+length = 4.0666666
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2.4333334, 4.0666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(438, 687), Vector2(438, 303)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.4333334, 4.0666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tj7vu"]
+_data = {
+&"RESET": SubResource("Animation_3u2hx"),
+&"new_animation": SubResource("Animation_7ajtn")
+}
+
+[node name="done_scene" type="Node2D" unique_id=1561592815]
+script = ExtResource("1_pcoa8")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=5069518]
+offset_right = 1151.0
+offset_bottom = 1151.0
+texture = ExtResource("2_8kkf3")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=156185494]
+offset_left = 2.0
+offset_top = 41.0
+offset_right = 1153.0
+offset_bottom = 1192.0
+theme_override_constants/outline_size = 22
+theme_override_font_sizes/normal_font_size = 108
+bbcode_enabled = true
+text = "[center]GG. You won.
+Pixelguy survived.[/center]"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="RichTextLabel" unique_id=363913144]
+libraries/ = SubResource("AnimationLibrary_yj15t")
+autoplay = &"new_animation"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=829459344]
+offset_left = 438.0
+offset_top = 687.0
+offset_right = 710.0
+offset_bottom = 986.99976
+theme_override_constants/separation = 17
+
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=1996097735]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
+text = "Play again"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=1595806411]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
+text = "Quit"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer" unique_id=966792181]
+libraries/ = SubResource("AnimationLibrary_tj7vu")
+autoplay = &"new_animation"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

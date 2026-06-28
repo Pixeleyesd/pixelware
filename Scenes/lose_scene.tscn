@@ -1,0 +1,253 @@
+[gd_scene format=3 uid="uid://doiryld32thl6"]
+
+[ext_resource type="Script" uid="uid://d1fwjhcewkenj" path="res://Scripts/done_scene.gd" id="1_gl6ei"]
+[ext_resource type="Texture2D" uid="uid://crofb4pdbnbvc" path="res://sprites/inverted_gradient.png" id="2_gl6ei"]
+
+[sub_resource type="Animation" id="Animation_gl6ei"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.9529412, 0, 0, 0.42745098)]
+}
+
+[sub_resource type="Animation" id="Animation_5w0s8"]
+resource_name = "new_animation"
+length = 5.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3.1, 4.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.9529412, 0, 0, 0), Color(0.9529412, 0, 0, 0.42745098)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j78q0"]
+_data = {
+&"RESET": SubResource("Animation_gl6ei"),
+&"new_animation": SubResource("Animation_5w0s8")
+}
+
+[sub_resource type="Animation" id="Animation_bat8a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_3xoba"]
+resource_name = "new_animation"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.398, 0.398, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5w0s8"]
+_data = {
+&"RESET": SubResource("Animation_bat8a"),
+&"new_animation": SubResource("Animation_3xoba")
+}
+
+[sub_resource type="Animation" id="Animation_j78q0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(438, 671)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_xblc1"]
+resource_name = "new_animation"
+length = 10.766666
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(6.1, 7.0333333, 8.033333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(438, 671), Vector2(438, 671), Vector2(438, 330)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(6.1, 7.0333333, 8.033333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_djxsm"]
+_data = {
+&"RESET": SubResource("Animation_j78q0"),
+&"new_animation": SubResource("Animation_xblc1")
+}
+
+[sub_resource type="Animation" id="Animation_gv2jh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_13ssj"]
+resource_name = "new_animation"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(4.0333333, 6.0233335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ncd1c"]
+_data = {
+&"RESET": SubResource("Animation_gv2jh"),
+&"new_animation": SubResource("Animation_13ssj")
+}
+
+[node name="done_scene" type="Node2D" unique_id=1561592815]
+script = ExtResource("1_gl6ei")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=5069518]
+offset_top = -215.0
+offset_right = 1151.0
+offset_bottom = 936.0
+texture = ExtResource("2_gl6ei")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1257347627]
+offset_left = -69.0
+offset_top = -75.0
+offset_right = 1218.0
+offset_bottom = 700.0
+color = Color(0.9529412, 0, 0, 0.42745098)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect" unique_id=1522766646]
+libraries/ = SubResource("AnimationLibrary_j78q0")
+autoplay = &"new_animation"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=156185494]
+offset_left = 2.0
+offset_top = 30.0
+offset_right = 1153.0
+offset_bottom = 220.0
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 108
+bbcode_enabled = true
+text = "[center]You lost.
+Pixelguy died.[/center]"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="RichTextLabel" unique_id=1799058443]
+libraries/ = SubResource("AnimationLibrary_5w0s8")
+autoplay = &"new_animation"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=829459344]
+offset_left = 438.0
+offset_top = 671.0
+offset_right = 710.0
+offset_bottom = 971.0006
+theme_override_constants/separation = 17
+
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=1996097735]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
+text = "Try again"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=1595806411]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
+text = "Quit"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer" unique_id=1271658063]
+libraries/ = SubResource("AnimationLibrary_djxsm")
+autoplay = &"new_animation"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=557207028]
+offset_left = 239.0
+offset_top = 230.0
+offset_right = 893.0
+offset_bottom = 270.0
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[center]Is it really over?[/center]"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="RichTextLabel2" unique_id=841229380]
+libraries/ = SubResource("AnimationLibrary_ncd1c")
+autoplay = &"new_animation"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

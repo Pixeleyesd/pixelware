@@ -3,6 +3,111 @@
 [ext_resource type="Texture2D" uid="uid://d0t0s0huheiut" path="res://sprites/gradient.png" id="1_68ljo"]
 [ext_resource type="Script" uid="uid://bb62cbm5tobud" path="res://Scripts/title_scene.gd" id="1_b6ftn"]
 
+[sub_resource type="Animation" id="Animation_b6ftn"]
+length = 12.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_3cm6q"]
+resource_name = "new_animation"
+length = 12.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2.0333333, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_4nugt"]
+resource_name = "new_animation_2"
+length = 12.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_characters")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(6.01, 7, 7.98, 9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_wpeey"]
+resource_name = "new_animation_3"
+length = 12.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3.01, 3.99, 5, 5.99),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_d3ks1"]
+resource_name = "new_animation_4"
+length = 12.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(8.99, 10, 11, 12),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4nugt"]
+_data = {
+&"RESET": SubResource("Animation_b6ftn"),
+&"new_animation": SubResource("Animation_3cm6q"),
+&"new_animation_2": SubResource("Animation_4nugt"),
+&"new_animation_3": SubResource("Animation_wpeey"),
+&"new_animation_4": SubResource("Animation_d3ks1")
+}
+
 [node name="TitleScreen" type="Node2D" unique_id=2114788113]
 script = ExtResource("1_b6ftn")
 
@@ -11,8 +116,7 @@ offset_right = 1151.0
 offset_bottom = 1151.0
 texture = ExtResource("1_68ljo")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect" unique_id=941199341]
-layout_mode = 0
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=941199341]
 offset_left = 2.0
 offset_top = 90.0
 offset_right = 1153.0
@@ -21,6 +125,60 @@ theme_override_constants/outline_size = 15
 theme_override_font_sizes/normal_font_size = 108
 bbcode_enabled = true
 text = "[center]PixelWare[/center]"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="RichTextLabel" unique_id=378078155]
+libraries/ = SubResource("AnimationLibrary_4nugt")
+autoplay = &"new_animation"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1285503123]
+offset_left = 2.0
+offset_top = 90.0
+offset_right = 1153.0
+offset_bottom = 1241.0
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/normal_font_size = 108
+bbcode_enabled = true
+text = "[center]pixelguy was here[/center]"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="RichTextLabel2" unique_id=1415534047]
+libraries/ = SubResource("AnimationLibrary_4nugt")
+autoplay = &"new_animation_3"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="." unique_id=317410080]
+offset_left = 2.0
+offset_top = 90.0
+offset_right = 1153.0
+offset_bottom = 1241.0
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/normal_font_size = 108
+bbcode_enabled = true
+text = "[center]Garlic is yum[/center]"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="RichTextLabel3" unique_id=642687733]
+libraries/ = SubResource("AnimationLibrary_4nugt")
+autoplay = &"new_animation_2"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="." unique_id=968741911]
+offset_left = 2.0
+offset_top = 90.0
+offset_right = 1153.0
+offset_bottom = 1241.0
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/normal_font_size = 108
+bbcode_enabled = true
+text = "[center]Garlicrunner[/center]"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="RichTextLabel4" unique_id=392827773]
+libraries/ = SubResource("AnimationLibrary_4nugt")
+autoplay = &"new_animation_4"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=880494088]
 offset_left = 438.0
