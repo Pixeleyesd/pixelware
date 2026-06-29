@@ -7,8 +7,7 @@ var timer_end = false
 func _ready() -> void:
 	await themed_timer.Timer(7.0)
 	#after this is completed...
-	timer_end = true 
-
+	timer_end = true
 
 func _process(_delta: float) -> void:
 	if buttons_pressed == 4:

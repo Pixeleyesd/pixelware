@@ -24,8 +24,10 @@ func _ready() -> void:
 # look for the scene titled `minigame_` and then whatever minigame number 
 # should be next. Make sure you name your minigame saves appropriately.
 
+	elif Global.minigames_done == 3:
+		get_tree().change_scene_to_file("res://Scenes/done_scene.tscn") # changes your scene
 	else:
-		get_tree().change_scene_to_file("res://Scenes/title_screen.tscn") # changes your scene
+		get_tree().change_scene_to_file("res://Scenes/title_scene.tscn") # changes your scene
 
 func _process(_delta: float) -> void: # runs EVERY FRAME
 	match Global.lives: # asks or checks if lives is equal to one of 
@@ -47,12 +49,13 @@ func _process(_delta: float) -> void: # runs EVERY FRAME
 			garlic_3.hide()
 			garlic_4.hide()
 		0:
-			garlic_container.hide() # just hides everything
-			get_tree().change_scene_to_file("res://Scenes/lose_screen.tscn")
+			get_tree().change_scene_to_file("res://Scenes/lose_scene.tscn")
 	
 	timer.text = " " + str(time) # make ths text reflect the value of the time variable. this makes names easier. the str() converts the int to a String
 	level.text = " Level " + str(Global.minigames_done+1) # this tells you want minigame you're on using concatenation (google the word yo)
-
+	if Global.minigames_done == 3:
+		get_tree().change_scene_to_file("res://Scenes/done_scene.tscn") # changes your scene
+		
 func Timer(start_time: float): # making a new function for timer countdown!
 	# we want the timer to go down, and when it reaches 0 it transitions 
 	# to the next scene!
