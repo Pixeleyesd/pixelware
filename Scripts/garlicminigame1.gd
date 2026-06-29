@@ -8,7 +8,6 @@ extends Node2D
 
 # make a signal
 signal garlic_collected
-signal garlic_missed
 
 func _process(_delta: float) -> void: # this runs EVERY FRAME! 
 	
@@ -16,7 +15,6 @@ func _process(_delta: float) -> void: # this runs EVERY FRAME!
 		if self.visible:
 			emit_signal("garlic_collected") #signal broadcast
 			self.hide() #removed from player sight; collected
-			$AnimationPlayer.stop()
 
 
 # Because you're emitting a signal here, you need to connect that signal to 
@@ -25,6 +23,3 @@ func _process(_delta: float) -> void: # this runs EVERY FRAME!
 # You would then need to connect it to the parent script or scene script
 # and also name it something. You can name it ` garlic_collect` as seen 
 # below, in the next script.
-
-func _on_area_2d_area_exited(area: Area2D) -> void:
-	emit_signal("garlic_missed")

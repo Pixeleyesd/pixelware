@@ -6,15 +6,9 @@ var garlic_collected = 0 # just keeping track of garlic collected
 var timer_end = false # boolean (true or false) stating whether the timer ended
 
 func _ready() -> void:
-
-		#Below you can see that I have a function that I named. I grab a 
-		#function from it that was created in it's script and use `await` to 
-		# tell the script to wait for a signal, or for when a function finshes
-
-
-	await themed_timer.Timer(20.0) #accessing a function from this node
-	#after this is compeleted...
-	timer_end = true # now we're saying "oh ye you ran out of time"
+	await themed_timer.Timer(20.0)
+	#after this is completed...
+	timer_end = true 
 
 func _process(_delta: float) -> void: # running every frame brochacho
 	

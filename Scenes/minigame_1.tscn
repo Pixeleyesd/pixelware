@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cx4ppwule0v23" path="res://sprites/background.webp" id="1_enoba"]
 [ext_resource type="PackedScene" uid="uid://dkst8k6nk1alm" path="res://Scenes/Player.tscn" id="2_11mgy"]
 [ext_resource type="Script" uid="uid://dv7uqtyxhefcp" path="res://Scripts/Whitewash.gd" id="2_f6tb2"]
-[ext_resource type="Script" uid="uid://c7kcl3488guc1" path="res://Scripts/garlic.gd" id="3_5txvl"]
 [ext_resource type="Texture2D" uid="uid://c1v2bp25pjhl" path="res://sprites/garlic.png" id="3_o6yob"]
+[ext_resource type="Script" uid="uid://brpcygg0ixdbf" path="res://Scripts/garlicminigame1.gd" id="4_ojqsy"]
 [ext_resource type="PackedScene" uid="uid://bxek8gw57b24v" path="res://Scenes/themed_timer.tscn" id="7_ojqsy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3qmyp"]
@@ -220,7 +220,7 @@ shape = SubResource("RectangleShape2D_gyj6q")
 
 [node name="Garlic" type="Node2D" parent="." unique_id=951330288]
 position = Vector2(-5, 358)
-script = ExtResource("3_5txvl")
+script = ExtResource("4_ojqsy")
 
 [node name="Garlic" type="TextureRect" parent="Garlic" unique_id=902541512]
 offset_top = -9.0
@@ -242,7 +242,7 @@ shape = SubResource("CapsuleShape2D_3qmyp")
 
 [node name="Garlic2" type="Node2D" parent="." unique_id=1261803223]
 position = Vector2(850, -9)
-script = ExtResource("3_5txvl")
+script = ExtResource("4_ojqsy")
 
 [node name="Garlic" type="TextureRect" parent="Garlic2" unique_id=289189481]
 offset_top = -9.0
@@ -264,7 +264,7 @@ shape = SubResource("CapsuleShape2D_3qmyp")
 
 [node name="Garlic3" type="Node2D" parent="." unique_id=1553724963]
 position = Vector2(7, 55)
-script = ExtResource("3_5txvl")
+script = ExtResource("4_ojqsy")
 
 [node name="Garlic" type="TextureRect" parent="Garlic3" unique_id=387696557]
 offset_top = -9.0

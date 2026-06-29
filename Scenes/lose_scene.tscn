@@ -236,9 +236,9 @@ libraries/ = SubResource("AnimationLibrary_djxsm")
 autoplay = &"new_animation"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=557207028]
-offset_left = 239.0
+offset_left = 246.0
 offset_top = 230.0
-offset_right = 893.0
+offset_right = 900.0
 offset_bottom = 270.0
 theme_override_constants/outline_size = 15
 theme_override_font_sizes/normal_font_size = 40

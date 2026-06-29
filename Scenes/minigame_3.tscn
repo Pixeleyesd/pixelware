@@ -1,0 +1,688 @@
+[gd_scene format=3 uid="uid://bsq0cu7m04f5o"]
+
+[ext_resource type="Script" uid="uid://t8046guoq3v5" path="res://Scripts/minigame_3.gd" id="1_lr4ld"]
+[ext_resource type="Texture2D" uid="uid://cx4ppwule0v23" path="res://sprites/background.webp" id="2_rpf30"]
+[ext_resource type="Script" uid="uid://dv7uqtyxhefcp" path="res://Scripts/Whitewash.gd" id="3_y6mal"]
+[ext_resource type="Texture2D" uid="uid://c1v2bp25pjhl" path="res://sprites/garlic.png" id="4_4cfv6"]
+[ext_resource type="Script" uid="uid://c7kcl3488guc1" path="res://Scripts/garlic.gd" id="4_y6mal"]
+[ext_resource type="PackedScene" uid="uid://dkst8k6nk1alm" path="res://Scenes/Player.tscn" id="6_4cfv6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3qmyp"]
+size = Vector2(40.36284, 40)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3qmyp"]
+
+[sub_resource type="Animation" id="Animation_lr4ld"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(51, -74)]
+}
+
+[sub_resource type="Animation" id="Animation_rpf30"]
+resource_name = "garlic be moving down"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(51, -74), Vector2(51, 675)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y6mal"]
+_data = {
+&"RESET": SubResource("Animation_lr4ld"),
+&"garlic be moving down": SubResource("Animation_rpf30")
+}
+
+[sub_resource type="Animation" id="Animation_7u6rh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(137, -75)]
+}
+
+[sub_resource type="Animation" id="Animation_75k32"]
+resource_name = "jdfi"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(8, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(137, -75), Vector2(137, 677)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f07lr"]
+_data = {
+&"RESET": SubResource("Animation_7u6rh"),
+&"jdfi": SubResource("Animation_75k32")
+}
+
+[sub_resource type="Animation" id="Animation_o2tgi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(223, -76)]
+}
+
+[sub_resource type="Animation" id="Animation_fsk5v"]
+resource_name = "wef"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(18.027584, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(223, -76), Vector2(223, 672)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b8c48"]
+_data = {
+&"RESET": SubResource("Animation_o2tgi"),
+&"wef": SubResource("Animation_fsk5v")
+}
+
+[sub_resource type="Animation" id="Animation_rneht"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(938, -92)]
+}
+
+[sub_resource type="Animation" id="Animation_un4qg"]
+resource_name = "uigi"
+length = 18.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(15.969739, 18),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(938, -92), Vector2(938, 677)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lgqf1"]
+_data = {
+&"RESET": SubResource("Animation_rneht"),
+&"uigi": SubResource("Animation_un4qg")
+}
+
+[sub_resource type="Animation" id="Animation_mu65p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(231, -73)]
+}
+
+[sub_resource type="Animation" id="Animation_1kvof"]
+resource_name = "cool"
+length = 8.033334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(6, 8.033334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(231, -73), Vector2(231, 671)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7u6rh"]
+_data = {
+&"RESET": SubResource("Animation_mu65p"),
+&"cool": SubResource("Animation_1kvof")
+}
+
+[sub_resource type="Animation" id="Animation_y6mal"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(388, -80)]
+}
+
+[sub_resource type="Animation" id="Animation_4cfv6"]
+resource_name = "garlicmove"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(388, -80), Vector2(388, 672)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mu65p"]
+_data = {
+&"RESET": SubResource("Animation_y6mal"),
+&"garlicmove": SubResource("Animation_4cfv6")
+}
+
+[sub_resource type="Animation" id="Animation_ls8yj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(668, -77)]
+}
+
+[sub_resource type="Animation" id="Animation_a3ygs"]
+resource_name = "wlkefn"
+length = 14.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(12.033547, 14),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(668, -77), Vector2(668, 672)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jovoe"]
+_data = {
+&"RESET": SubResource("Animation_ls8yj"),
+&"wlkefn": SubResource("Animation_a3ygs")
+}
+
+[sub_resource type="Animation" id="Animation_tpjwy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(535, -80)]
+}
+
+[sub_resource type="Animation" id="Animation_xx1sb"]
+resource_name = "jgjh"
+length = 16.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(14.025858, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(535, -80), Vector2(535, 670)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h4kju"]
+_data = {
+&"RESET": SubResource("Animation_tpjwy"),
+&"jgjh": SubResource("Animation_xx1sb")
+}
+
+[sub_resource type="Animation" id="Animation_s0j2t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(418, -100)]
+}
+
+[sub_resource type="Animation" id="Animation_5plo5"]
+resource_name = "moev garlic"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(4, 6.0155253),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(418, -100), Vector2(418, 652)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1kvof"]
+_data = {
+&"RESET": SubResource("Animation_s0j2t"),
+&"moev garlic": SubResource("Animation_5plo5")
+}
+
+[sub_resource type="Animation" id="Animation_f07lr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(948, -74)]
+}
+
+[sub_resource type="Animation" id="Animation_kvuqf"]
+resource_name = "lhflqw"
+length = 12.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(10.033334, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(447.64, -74), Vector2(447.64, 692)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o2tgi"]
+_data = {
+&"RESET": SubResource("Animation_f07lr"),
+&"lhflqw": SubResource("Animation_kvuqf")
+}
+
+[node name="Minigame_3" type="Node2D" unique_id=1563486763]
+script = ExtResource("1_lr4ld")
+
+[node name="ScrollingBackground" type="Parallax2D" parent="." unique_id=1237231363]
+repeat_size = Vector2(1241.075, 0)
+
+[node name="Background" type="TextureRect" parent="ScrollingBackground" unique_id=1129870099]
+offset_left = -56.0
+offset_top = -9.0
+offset_right = 1185.1791
+offset_bottom = 652.0
+texture = ExtResource("2_rpf30")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1381641433]
+offset_left = -4.0
+offset_top = -7.0
+offset_right = 1172.0
+offset_bottom = 676.0
+color = Color(1, 1, 1, 0)
+script = ExtResource("3_y6mal")
+metadata/_edit_use_anchors_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=984469393]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1955612129]
+position = Vector2(572.00006, 524)
+scale = Vector2(28.973549, 1)
+shape = SubResource("RectangleShape2D_3qmyp")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1688964919]
+position = Vector2(-622, 175)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1119237322]
+position = Vector2(601.1228, 915.7727)
+rotation = -1.5715151
+scale = Vector2(28.973549, 1)
+shape = SubResource("RectangleShape2D_3qmyp")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2" unique_id=869484391]
+position = Vector2(1794.9998, 908.9999)
+rotation = -1.5715151
+scale = Vector2(28.973549, 1)
+shape = SubResource("RectangleShape2D_3qmyp")
+
+[node name="collision67" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1130500387]
+position = Vector2(1202, 495)
+rotation = 0.0005625486
+scale = Vector2(28.973545, 0.9999999)
+shape = SubResource("RectangleShape2D_3qmyp")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=93776213]
+
+[node name="garlicmissed" type="CollisionShape2D" parent="Area2D" unique_id=1836848026]
+position = Vector2(580, 670)
+rotation = 0.0005625486
+scale = Vector2(28.973547, 0.99999994)
+shape = SubResource("RectangleShape2D_3qmyp")
+
+[node name="Garlic" type="Node2D" parent="." unique_id=951330288]
+position = Vector2(51, -74)
+script = ExtResource("4_y6mal")
+
+[node name="Garlic" type="TextureRect" parent="Garlic" unique_id=902541512]
+offset_top = -9.0
+offset_right = 100.0
+offset_bottom = 91.0
+texture = ExtResource("4_4cfv6")
+
+[node name="Area2D" type="Area2D" parent="Garlic" unique_id=434299712]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic/Area2D" unique_id=52143182]
+position = Vector2(49.000004, 43)
+rotation = 1.5533527
+scale = Vector2(1.7943, 1.9051812)
+shape = SubResource("CapsuleShape2D_3qmyp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Garlic" unique_id=1747319618]
+libraries/ = SubResource("AnimationLibrary_y6mal")
+autoplay = &"garlic be moving down"
+
+[node name="Garlic7" type="Node2D" parent="." unique_id=530429042]
+position = Vector2(137, -75)
+script = ExtResource("4_y6mal")
+
+[node name="Garlic" type="TextureRect" parent="Garlic7" unique_id=801112045]
+offset_top = -9.0
+offset_right = 100.0
+offset_bottom = 91.0
+texture = ExtResource("4_4cfv6")
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="Garlic7" unique_id=128037578]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic7/Area2D" unique_id=177435427]
+position = Vector2(49.000004, 43)
+rotation = 1.5533527
+scale = Vector2(1.7943, 1.9051812)
+shape = SubResource("CapsuleShape2D_3qmyp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Garlic7" unique_id=1323873181]
+libraries/ = SubResource("AnimationLibrary_f07lr")
+autoplay = &"jdfi"
+
+[node name="Garlic8" type="Node2D" parent="." unique_id=1285739182]
+position = Vector2(223, -76)
+script = ExtResource("4_y6mal")
+
+[node name="Garlic" type="TextureRect" parent="Garlic8" unique_id=1431639628]
+offset_top = -9.0
+offset_right = 100.0
+offset_bottom = 91.0
+texture = ExtResource("4_4cfv6")
+
+[node name="Area2D" type="Area2D" parent="Garlic8" unique_id=140880339]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic8/Area2D" unique_id=499894957]
+position = Vector2(49.000004, 43)
+rotation = 1.5533527
+scale = Vector2(1.7943, 1.9051812)
+shape = SubResource("CapsuleShape2D_3qmyp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Garlic8" unique_id=77818471]
+libraries/ = SubResource("AnimationLibrary_b8c48")
+autoplay = &"wef"
+
+[node name="Garlic2" type="Node2D" parent="." unique_id=1261803223]
+position = Vector2(938, -92)
+script = ExtResource("4_y6mal")
+
+[node name="Garlic" type="TextureRect" parent="Garlic2" unique_id=289189481]
+offset_top = -9.0
+offset_right = 100.0
+offset_bottom = 91.0
+texture = ExtResource("4_4cfv6")
+
+[node name="Area2D" type="Area2D" parent="Garlic2" unique_id=2035175696]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic2/Area2D" unique_id=1534734003]
+position = Vector2(49.000004, 43)
+rotation = 1.5533527
+scale = Vector2(1.7943, 1.9051812)
+shape = SubResource("CapsuleShape2D_3qmyp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Garlic2" unique_id=1090181293]
+libraries/ = SubResource("AnimationLibrary_lgqf1")
+autoplay = &"uigi"
+
+[node name="Garlic3" type="Node2D" parent="." unique_id=1553724963]
+position = Vector2(231, -73)
+script = ExtResource("4_y6mal")
+
+[node name="Garlic" type="TextureRect" parent="Garlic3" unique_id=387696557]
+offset_left = 72.0
+offset_top = -12.0
+offset_right = 172.0
+offset_bottom = 88.0
+texture = ExtResource("4_4cfv6")
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="Garlic3" unique_id=654102197]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic3/Area2D" unique_id=2024195472]
+position = Vector2(121, 40)
+rotation = 1.5533527
+scale = Vector2(1.7943, 1.9051812)
+shape = SubResource("CapsuleShape2D_3qmyp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Garlic3" unique_id=208552131]
+libraries/ = SubResource("AnimationLibrary_7u6rh")
+autoplay = &"cool"
+
+[node name="Garlic4" type="Node2D" parent="." unique_id=63260259]
+position = Vector2(388, -80)
+script = ExtResource("4_y6mal")
+
+[node name="Garlic" type="TextureRect" parent="Garlic4" unique_id=689032142]
+offset_top = -9.0
+offset_right = 100.0
+offset_bottom = 91.0
+texture = ExtResource("4_4cfv6")
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="Garlic4" unique_id=1956756607]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic4/Area2D" unique_id=1431915225]
+position = Vector2(49.000004, 43)
+rotation = 1.5533527
+scale = Vector2(1.7943, 1.9051812)
+shape = SubResource("CapsuleShape2D_3qmyp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Garlic4" unique_id=1342090575]
+libraries/ = SubResource("AnimationLibrary_mu65p")
+autoplay = &"garlicmove"
+
+[node name="Garlic5" type="Node2D" parent="." unique_id=36008445]
+position = Vector2(668, -77)
+script = ExtResource("4_y6mal")
+
+[node name="Garlic" type="TextureRect" parent="Garlic5" unique_id=781175368]
+offset_top = -9.0
+offset_right = 100.0
+offset_bottom = 91.0
+texture = ExtResource("4_4cfv6")
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="Garlic5" unique_id=1228553893]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic5/Area2D" unique_id=581349025]
+position = Vector2(49.000004, 43)
+rotation = 1.5533527
+scale = Vector2(1.7943, 1.9051812)
+shape = SubResource("CapsuleShape2D_3qmyp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Garlic5" unique_id=259710742]
+libraries/ = SubResource("AnimationLibrary_jovoe")
+autoplay = &"wlkefn"
+
+[node name="Garlic9" type="Node2D" parent="." unique_id=1648382059]
+position = Vector2(535, -80)
+script = ExtResource("4_y6mal")
+
+[node name="Garlic" type="TextureRect" parent="Garlic9" unique_id=353633913]
+offset_top = -9.0
+offset_right = 100.0
+offset_bottom = 91.0
+texture = ExtResource("4_4cfv6")
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="Garlic9" unique_id=1464935116]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic9/Area2D" unique_id=2003671638]
+position = Vector2(49.000004, 43)
+rotation = 1.5533527
+scale = Vector2(1.7943, 1.9051812)
+shape = SubResource("CapsuleShape2D_3qmyp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Garlic9" unique_id=2008498456]
+libraries/ = SubResource("AnimationLibrary_h4kju")
+autoplay = &"jgjh"
+
+[node name="Garlic10" type="Node2D" parent="." unique_id=2037050837]
+position = Vector2(418, -100)
+script = ExtResource("4_y6mal")
+
+[node name="Garlic" type="TextureRect" parent="Garlic10" unique_id=82918535]
+offset_left = 375.0
+offset_top = 10.0
+offset_right = 475.0
+offset_bottom = 110.0
+texture = ExtResource("4_4cfv6")
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="Garlic10" unique_id=1577674349]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic10/Area2D" unique_id=791551111]
+position = Vector2(424.99997, 61)
+rotation = 1.5533527
+scale = Vector2(1.7943, 1.9051812)
+shape = SubResource("CapsuleShape2D_3qmyp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Garlic10" unique_id=1785929611]
+libraries/ = SubResource("AnimationLibrary_1kvof")
+autoplay = &"moev garlic"
+
+[node name="Garlic6" type="Node2D" parent="." unique_id=59593653]
+position = Vector2(948, -74)
+script = ExtResource("4_y6mal")
+
+[node name="Garlic" type="TextureRect" parent="Garlic6" unique_id=742365296]
+offset_left = 115.0
+offset_top = -29.0
+offset_right = 215.0
+offset_bottom = 71.0
+texture = ExtResource("4_4cfv6")
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="Garlic6" unique_id=145496877]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic6/Area2D" unique_id=318282767]
+position = Vector2(164, 23.000002)
+rotation = 1.5533527
+scale = Vector2(1.7943, 1.9051812)
+shape = SubResource("CapsuleShape2D_3qmyp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Garlic6" unique_id=1559334795]
+libraries/ = SubResource("AnimationLibrary_o2tgi")
+autoplay = &"lhflqw"
+
+[node name="Player" parent="." unique_id=1043414835 instance=ExtResource("6_4cfv6")]
+position = Vector2(37, 586)
+
+[connection signal="area_exited" from="Area2D" to="Garlic" method="_on_area_2d_area_exited"]
+[connection signal="garlic_collected" from="Garlic" to="." method="_on_garlic_garlic_collected"]
+[connection signal="garlic_missed" from="Garlic" to="." method="_on_garlic_garlic_missed"]
+[connection signal="garlic_collected" from="Garlic7" to="." method="_on_garlic_7_garlic_collected"]
+[connection signal="garlic_collected" from="Garlic8" to="." method="_on_garlic_8_garlic_collected"]
+[connection signal="garlic_collected" from="Garlic2" to="." method="_on_garlic_2_garlic_collected"]
+[connection signal="garlic_collected" from="Garlic3" to="." method="_on_garlic_3_garlic_collected"]
+[connection signal="garlic_collected" from="Garlic4" to="." method="_on_garlic_4_garlic_collected"]
+[connection signal="garlic_collected" from="Garlic5" to="." method="_on_garlic_5_garlic_collected"]
+[connection signal="garlic_collected" from="Garlic9" to="." method="_on_garlic_9_garlic_collected"]
+[connection signal="garlic_collected" from="Garlic10" to="." method="_on_garlic_10_garlic_collected"]
+[connection signal="garlic_collected" from="Garlic6" to="." method="_on_garlic_6_garlic_collected"]
