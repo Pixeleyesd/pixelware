@@ -1,6 +1,9 @@
 # PixelWare
 A Warioware style game. Made in Godot!
 
+Play here: https://pixelware.pixeleyesd.dpdns.org/
+or here https://pixeleyesd.itch.io/pixelware
+
 ---
 
 # Minigames
